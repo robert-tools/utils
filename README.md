@@ -13,20 +13,21 @@ npm install @robert.tools/utils
 ### 📝 Sample usage
 
 ```typescript
-import { utils } from '@robert.tools/utils';
+import { sortASC } from '@robert.tools/utils';
 
-utils('hello'); // 'utils: hello'
+sortASC(['foo', 'bar', 'Etag', 'baz']); // ['bar', 'baz', 'Etag', 'foo']
 ```
 
 ## 🗃️ commands
-After an npm install with `npm i` the following commands are available:
-* initialize placeholders: `npm run init <semantic>`
-* release a new version: `npm run release <semantic>`
 
+After an npm install with `npm i` the following commands are available:
+
+* sort asc: `sortASC(array)`
+* get prop: `getProp(obj, key, defaultValue)`
 
 ## ⚖️ Notes
-This software is hand-crafted, test-driven and assisted by AI tools. I know each line of my code. ✌️
 
+This software is hand-crafted, test-driven and assisted by AI tools. I know each line of my code. ✌️
 
 | Tool  | Comment |
  | ------------- | ------------- |

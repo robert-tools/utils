@@ -1,18 +1,33 @@
-/**
- * 🧪 testing module
- * @version 1.0.0
- * @date 2026-09-19
- * @license MIT
- * @author Robert Willemelis <github.com/willi84>
- */
-import { sample } from './index';
+import { getProp, sortASC } from './index';
 
-describe('@robert.tools/utils', () => {
-    it('should return a utils string', () => {
-        expect(sample('hello')).toBe('sample: hello');
+describe('✅ getProp()', () => {
+    const FN = getProp;
+    const obj = { a: 1, b: false, c: null };
+    it('should return the value if the key exists', () => {
+        expect(FN(obj, 'a')).toBe(1);
+        expect(FN(obj, 'b')).toBe(false);
+        expect(FN(obj, 'c')).toBe(null);
     });
 
-    it('should return a utils string with empty input', () => {
-        expect(sample('')).toBe('sample: ');
+    it('should return the default value if the key does not exist', () => {
+        expect(FN(obj, 'z', 3)).toBe(3);
+        expect(FN(obj, 'd')).toBe(undefined);
+    });
+});
+
+describe('✅ sortASC()', () => {
+    const FN = sortASC;
+    it('should sort an array of strings in ascending order', () => {
+        const input = ['foo', 'bar', 'Etag', 'baz'];
+        expect(FN(input)).toEqual(['bar', 'baz', 'Etag', 'foo']);
+    });
+    it('should sort an array of strings in ascending order', () => {
+        const input = ['Content-Type', 'ContentLength'];
+        expect(FN(input)).toEqual(['ContentLength', 'Content-Type']);
+    });
+    it('should sort nothing', () => {
+        expect(FN([])).toEqual([]);
+        expect(FN(['a', 'b'])).toEqual(['a', 'b']);
+        expect(FN(['A-B', 'a_b'])).toEqual(['A-B', 'a_b']);
     });
 });
