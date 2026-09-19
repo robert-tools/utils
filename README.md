@@ -1,21 +1,21 @@
-# 🗂️ @robert.tools/sample
+# 🗂️ @robert.tools/utils
 
-<description>
+A collection of little helper functions.
 
 ## 📜 Usage
 
 ### 🟢 Installation
 
 ```bash
-npm install @robert.tools/sample
+npm install @robert.tools/utils
 ```
 
 ### 📝 Sample usage
 
 ```typescript
-import { <name> } from '@robert.tools/sample';
+import { utils } from '@robert.tools/utils';
 
-<name>('hello'); // '<name>: hello'
+utils('hello'); // 'utils: hello'
 ```
 
 ## 🗃️ commands

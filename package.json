@@ -1,7 +1,7 @@
 {
-    "name": "@robert.tools/sample",
-    "version": "1.1.8",
-    "description": "<description>",
+    "name": "@robert.tools/utils",
+    "version": "1.0.0",
+    "description": "A collection of little helper functions.",
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",
     "exports": {
@@ -25,20 +25,20 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/robert-tools/<name>.git"
+        "url": "git+https://github.com/robert-tools/utils.git"
     },
     "bugs": {
-        "url": "https://github.com/robert-tools/<name>/issues"
+        "url": "https://github.com/robert-tools/utils/issues"
     },
-    "homepage": "https://github.com/robert-tools/<name>#readme",
+    "homepage": "https://github.com/robert-tools/utils#readme",
     "keywords": [
         "typescript",
         "node",
-        "<name>",
+        "utils",
         "robert.tools"
     ],
-    "author": "<author>",
-    "license": "<license>",
+    "author": "Robert Willemelis",
+    "license": "MIT",
     "engines": {
         "node": ">=22"
     },
