@@ -1,3 +1,4 @@
+import type { IS_INCLUDE } from './index.d';
 /**
  * 🎯 get a property from an object with a default value if it does not exist
  * @param obj ➡️ The object from which to retrieve the property.
@@ -28,4 +29,27 @@ export const sortASC = (array: string[]): string[] => {
         if (normalizeValue(a) > normalizeValue(b)) return 1;
         return 0; // same kind of values
     });
+};
+
+/**
+ * 🎯 filter an object based on specified keys and inclusion/exclusion type
+ * @param {any} object ➡️ The object to be filtered.
+ * @param {string[]} KEYS ➡️ The array of keys to include or exclude.
+ * @param {IS_INCLUDE} type ➡️ The type of filtering: 'include' or 'exclude'.
+ * @returns {any} 📤 The filtered object.
+ */
+export const filterObject = (
+    object: any,
+    KEYS: string[],
+    type: IS_INCLUDE = 'include'
+): any => {
+    const result: any = {};
+    for (const key of Object.keys(object)) {
+        const shouldInclude =
+            type === 'include' ? KEYS.includes(key) : !KEYS.includes(key);
+        if (shouldInclude) {
+            result[key] = object[key];
+        }
+    }
+    return result;
 };

@@ -24,6 +24,8 @@ After an npm install with `npm i` the following commands are available:
 
 * sort asc: `sortASC(array)`
 * get prop: `getProp(obj, key, defaultValue)`
+* filter object: `filterObject(obj, KEYS, type)`
+
 
 ## ⚖️ Notes
 

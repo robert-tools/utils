@@ -1,4 +1,4 @@
-import { getProp, sortASC } from './index';
+import { filterObject, getProp, sortASC } from './index';
 
 describe('✅ getProp()', () => {
     const FN = getProp;
@@ -29,5 +29,15 @@ describe('✅ sortASC()', () => {
         expect(FN([])).toEqual([]);
         expect(FN(['a', 'b'])).toEqual(['a', 'b']);
         expect(FN(['A-B', 'a_b'])).toEqual(['A-B', 'a_b']);
+    });
+});
+describe('✅ filterObject', () => {
+    const FN = filterObject;
+    const obj = { a: 1, b: 2, header: {} };
+    it('should include only specified keys when type is include', () => {
+        expect(FN(obj, ['header'], 'include')).toEqual({ header: {} });
+    });
+    it('should exclude specified keys when type is exclude', () => {
+        expect(FN(obj, ['header'], 'exclude')).toEqual({ a: 1, b: 2 });
     });
 });
